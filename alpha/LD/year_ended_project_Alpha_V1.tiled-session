@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx",
+    "activeFile": "onboarding_jump_glide_alpha_V1.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
@@ -12,8 +12,8 @@
             "scale": 0.26309183673469383,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 2727.1845789861545,
-                "y": 334.4839623007408
+                "x": 2516.231625489664,
+                "y": 351.5882558274833
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx#coin": {
@@ -29,8 +29,8 @@
             "scale": 0.7469374999999999,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 691.490251861769,
-                "y": 394.2766295707473
+                "x": 703.539452765459,
+                "y": 216.88561626642124
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx#Tileset": {
@@ -52,8 +52,8 @@
             "scale": 0.40285937499999996,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1284.5673505798395,
-                "y": 731.0243183493
+                "x": 1598.5727029438003,
+                "y": 402.12543148586286
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx#Tileset": {
@@ -75,8 +75,8 @@
             "scale": 0.40285937499999996,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1388.8220920761744,
-                "y": 732.2654462242564
+                "x": 1598.5727029438003,
+                "y": 402.12543148586286
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#coin32": {
@@ -101,8 +101,8 @@
             "scale": 0.40285937499999996,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1602.2960865686694,
-                "y": 400.8843036109064
+                "x": 1598.5727029438003,
+                "y": 402.12543148586286
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#Tileset": {
@@ -124,8 +124,8 @@
             "scale": 0.75,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 759.3333333333334,
-                "y": 682.6666666666665
+                "x": 1600,
+                "y": 217.33333333333334
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#Tileset": {
@@ -146,10 +146,10 @@
         },
         "onboarding_jump_glide_alpha_V1.tmx": {
             "scale": 0.75,
-            "selectedLayer": 1,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 612.6666666666665,
-                "y": -84
+                "x": 1116.6666666666665,
+                "y": -37.33333333333326
             }
         },
         "onboarding_jump_glide_alpha_V1.tmx#Tileset_Alpha": {
@@ -165,7 +165,9 @@
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx",
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx",
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx"
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx",
+        "onboarding_jump_glide_alpha_V1.tmx"
     ],
     "project": "year_ended_project_Alpha_V1.tiled-project",
     "property.type": "bool",
@@ -174,7 +176,9 @@
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx",
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx",
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx"
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx",
+        "onboarding_jump_glide_alpha_V1.tmx"
     ],
     "tileset.embedInMap": true
 }
