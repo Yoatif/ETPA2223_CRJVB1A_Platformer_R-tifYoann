@@ -8,8 +8,8 @@ var config = {
             debug: false
         }
     },
-    input: { gamepad: true },
-    pixelArt : true,
-    scene: [Titlescreen,]
+    //input: { gamepad: true },
+    //pixelArt : true,
+    scene: [Scenetest]
 };
 new Phaser.Game(config);
