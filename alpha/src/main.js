@@ -1,15 +1,17 @@
 var config = {
-    type: Phaser.AUTO,
-    width: 800, height: 450,
+    width: 1600,
+    height: 900,
+    parent: "game-container",
     physics: {
-        default: 'arcade',
-        arcade: {
-            gravity: { y: 300 },
-            debug: false
-        }
-    },
-    //input: { gamepad: true },
-    //pixelArt : true,
-    scene: [Scenetest]
-};
-new Phaser.Game(config);
+          default: 'arcade',
+          arcade: {
+            
+              gravity: { y: 0 },
+              debug: true
+          }
+      },
+      pixelArt: true,      
+      scene: [Titlescreen,Info,Scene1,Shop]
+    }
+  
+  var game = new Phaser.Game(config);

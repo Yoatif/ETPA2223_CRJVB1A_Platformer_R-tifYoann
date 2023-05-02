@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.9" tiledversion="1.9.2" orientation="orthogonal" renderorder="right-down" width="30" height="20" tilewidth="32" tileheight="32" infinite="1" nextlayerid="7" nextobjectid="1">
- <tileset firstgid="1" name="Tileset_Alpha" tilewidth="32" tileheight="32" tilecount="1024" columns="32">
+ <editorsettings>
+  <export target="onboarding_jump_glide_alpha_V1..json" format="json"/>
+ </editorsettings>
+ <tileset firstgid="1" name="tileset" tilewidth="32" tileheight="32" tilecount="1024" columns="32">
   <image source="Tileset_Alpha.png" width="1024" height="1024"/>
   <tile id="1">
    <objectgroup draworder="index" id="2">
@@ -96,7 +99,26 @@
   </data>
  </layer>
  <layer id="6" name="deco4" width="30" height="20">
-  <data encoding="csv"/>
+  <data encoding="csv">
+   <chunk x="16" y="-16" width="16" height="16">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</chunk>
+  </data>
  </layer>
  <layer id="1" name="sol" width="30" height="20">
   <data encoding="csv">

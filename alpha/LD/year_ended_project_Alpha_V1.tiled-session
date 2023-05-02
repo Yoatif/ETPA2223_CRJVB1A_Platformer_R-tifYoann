@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx",
+    "activeFile": "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "All Files (*)",
@@ -12,7 +12,7 @@
             "scale": 0.268375,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1600.3726129483002,
+                "x": 1604.0987424312996,
                 "y": 1602.2356776897998
             }
         },
@@ -23,8 +23,8 @@
             "scale": 0.26309183673469383,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 4958.344645696778,
-                "y": 332.5834852422139
+                "x": 2516.231625489664,
+                "y": 351.5882558274833
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx#coin": {
@@ -112,8 +112,8 @@
             "scale": 0.40285937499999996,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 1599.8138308187567,
-                "y": 744.67672497382
+                "x": 1597.331575068844,
+                "y": 403.3665593608192
             }
         },
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#Tileset": {
@@ -157,13 +157,17 @@
         },
         "onboarding_jump_glide_alpha_V1.tmx": {
             "scale": 0.75,
-            "selectedLayer": 0,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 1111.3333333333333,
-                "y": -36
+                "x": 704.6666666666665,
+                "y": -1.3333333333332575
             }
         },
         "onboarding_jump_glide_alpha_V1.tmx#Tileset_Alpha": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "onboarding_jump_glide_alpha_V1.tmx#tileset": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -197,14 +201,14 @@
     "project": "year_ended_project_Alpha_V1.tiled-project",
     "property.type": "bool",
     "recentFiles": [
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx",
-        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx",
         "onboarding_jump_glide_alpha_V1.tmx",
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx",
         "scene1.tmx"
     ],
     "tileset.embedInMap": true
