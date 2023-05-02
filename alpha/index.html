@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title> ZeldaLike RIALLOT Alexandre </title>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"> </script>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="mainScreen.js"></script>
+    <script src="Monde_Test.js"></script>
+    <script src="darkForest.js"></script>
+    <script src="rockPlain.js"></script>
+    <script src="cave.js"></script>
+    <script src="temple.js"></script>
+    <script type="text/javascript">
+        var config = {
+            type: Phaser.AUTO,
+            width: 800, height: 450,
+            physics: {
+                default: 'arcade',
+                arcade: {
+                    gravity: { y: false },
+                    debug: false
+                }
+            },
+            input: { gamepad: true },
+            pixelArt : true,
+            scene: [MainScreen, DarkForest, RockPlain, Cave, WaterTemple]
+        };
+        new Phaser.Game(config);
+    </script>
+</body>
+
+</html>
