@@ -448,7 +448,7 @@
         {
          "columns":32,
          "firstgid":1,
-         "image":"Tileset_Alpha.png",
+         "image":"tilesetAlpha.png",
          "imageheight":1024,
          "imagewidth":1024,
          "margin":0,

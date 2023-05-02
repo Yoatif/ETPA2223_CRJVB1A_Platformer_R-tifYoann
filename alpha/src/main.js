@@ -11,7 +11,7 @@ var config = {
           }
       },
       pixelArt: true,      
-      scene: [Titlescreen,Info,Scene1,Shop]
+      scene: [Scene1]
     }
   
   var game = new Phaser.Game(config);

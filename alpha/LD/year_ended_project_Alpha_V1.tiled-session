@@ -155,6 +155,9 @@
         "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#pixelTiles": {
             "scaleInDock": 1
         },
+        "onboarding.tmx#tileset": {
+            "scaleInEditor": 1
+        },
         "onboarding_jump_glide_alpha_V1.tmx": {
             "scale": 0.75,
             "selectedLayer": 3,
