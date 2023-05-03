@@ -1,0 +1,223 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "onboarding.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "All Files (*)",
+    "fileStates": {
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx": {
+            "scale": 0.268375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1604.0987424312996,
+                "y": 1602.2356776897998
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx#Tileset_PlaceHolder": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx": {
+            "scale": 0.26309183673469383,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2516.231625489664,
+                "y": 351.5882558274833
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx#coin": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx#coinRed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx#tiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx": {
+            "scale": 0.7469374999999999,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 703.539452765459,
+                "y": 216.88561626642124
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx#Tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx#inviWall": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx#pesoGold": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx#pesoRed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx#pixelTiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx": {
+            "scale": 0.40285937499999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1598.5727029438003,
+                "y": 402.12543148586286
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx#Tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx#inviWall": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx#pesoGold": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx#pesoRed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx#pixelTiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx": {
+            "scale": 0.40285937499999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1598.5727029438003,
+                "y": 402.12543148586286
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#coin32": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#coinRed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#inviWall": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#spike": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#tilesheet": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx#walkingEnemy": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx": {
+            "scale": 0.40285937499999996,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1597.331575068844,
+                "y": 403.3665593608192
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#Tileset": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#inviWall": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#pesoGold": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#pesoRed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx#pixelTiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1600,
+                "y": 217.33333333333334
+            }
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#Tileset": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#inviWall": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#pesoGold": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#pesoRed": {
+            "scaleInDock": 1
+        },
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx#pixelTiles": {
+            "scaleInDock": 1
+        },
+        "onboarding.tmx": {
+            "scale": 0.3596958705357143,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1280.2482255749915,
+                "y": 383.65744870651224
+            }
+        },
+        "onboarding.tmx#tileset": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "onboarding_jump_glide_alpha_V1.tmx": {
+            "scale": 0.75,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 704.6666666666665,
+                "y": -1.3333333333332575
+            }
+        },
+        "onboarding_jump_glide_alpha_V1.tmx#Tileset_Alpha": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "onboarding_jump_glide_alpha_V1.tmx#tileset": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "scene1.tmx": {
+            "scale": 0.251787109375,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 2563.673738509871,
+                "y": 1537.0127603459646
+            }
+        },
+        "scene1.tmx#tileset": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/JV1A_RETIF_Yoann_zelda_like/ETPA2223_CRJVB1A_Platformer_R-tifYoann/alpha/LD",
+    "last.imagePath": "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/JV1A_RETIF_Yoann_zelda_like/ETPA2223_CRJVB1A_Platformer_R-tifYoann/alpha/LD",
+    "map.fixedSize": false,
+    "map.lastUsedExportFilter": "All Files (*)",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx",
+        "scene1.tmx",
+        "onboarding.tmx"
+    ],
+    "project": "year_ended_project_Alpha_V1.tiled-project",
+    "property.type": "bool",
+    "recentFiles": [
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/Programmation/Archive_2021_2022/ZeldaLike-main/assets/Tiled/mondeTest.tmx",
+        "scene1.tmx",
+        "onboarding.tmx",
+        "onboarding_jump_glide_alpha_V1.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapY.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapZ.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapX.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapB.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/mapA.tmx",
+        "C:/Users/yoyo3/OneDrive/Documents/Game_Design/marioLike-phaser/assets/maps/map.tmx"
+    ],
+    "tileset.embedInMap": true
+}

@@ -1,41 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <title> ZeldaLike RIALLOT Alexandre </title>
-    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"> </script>
-    <style type="text/css">
-        body {
-            margin: 0;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Warrior Quest</title>
+    <link rel="stylesheet" href="src/style.css">
 </head>
-
 <body>
-    <script src="mainScreen.js"></script>
-    <script src="Monde_Test.js"></script>
-    <script src="darkForest.js"></script>
-    <script src="rockPlain.js"></script>
-    <script src="cave.js"></script>
-    <script src="temple.js"></script>
-    <script type="text/javascript">
-        var config = {
-            type: Phaser.AUTO,
-            width: 800, height: 450,
-            physics: {
-                default: 'arcade',
-                arcade: {
-                    gravity: { y: false },
-                    debug: false
-                }
-            },
-            input: { gamepad: true },
-            pixelArt : true,
-            scene: [MainScreen, DarkForest, RockPlain, Cave, WaterTemple]
-        };
-        new Phaser.Game(config);
-    </script>
-</body>
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
 
+    
+        
+        <script src="src/scene1.js"></script>
+        
+        <script src="src/main.js"></script>
+         
+
+        <!--
+        <script src="src/gameover.js"></script>
+        <script src="src/character.js"></script>
+        <script src="src/gamewin.js"></script>
+        
+    -->
+    
+</body>
 </html>
