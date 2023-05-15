@@ -24,8 +24,8 @@ class Scene1 extends Phaser.Scene{
         this.load.image("collectible","./assets/collectible.png");
 
         //import perso
-        this.load.spritesheet("playerDebout", "./assets/perso_debout.png",  { frameWidth: 64, frameHeight: 128 });
-        this.load.spritesheet("playerGlissade", "./assets/perso_glissade.png", {frameWidth: 128, frameHeight: 64});
+        this.load.spritesheet("player", "./assets/spritesheet_perso.png",  { frameWidth: 128, frameHeight: 128 });
+
 
     }
 
@@ -55,7 +55,7 @@ class Scene1 extends Phaser.Scene{
         
 
 
-        this.player = this.physics.add.sprite(40, 580, 'playerDebout');
+        this.player = this.physics.add.sprite(40, 580, 'player');
         //this.player.setCollideWorldBounds(true);
         this.player.body.gravity.y = 350;
         
