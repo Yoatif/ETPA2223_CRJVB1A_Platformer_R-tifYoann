@@ -61,6 +61,19 @@ class Scene1 extends Phaser.Scene{
         
         this.physics.add.collider(this.player, sol, );
 
+        this.anims.create({
+            key: 'run',
+            frames: this.anims.generateFrameNumbers('player', { frame:0 }),
+            frameRate: 10,
+            
+        });
+        this.anims.create({
+            key: 'glide',
+            frame: this.anims.generateFrameNumbers('player',{frame:1}),
+            frameRate: 10
+
+        });
+
         
         /*this.collect = this.add.group();
         this.collectibleLayer = carteDuNiveau.getObjectLayer('collectible');
@@ -107,8 +120,17 @@ class Scene1 extends Phaser.Scene{
         if(Phaser.Input.Keyboard.JustDown(this.keyZ)) {
             console.log('Z key pressed');
             this.player.setVelocityY(-350);
+            this.player.anims.play('run');
             this.canJump = false;
             //player.anims.play('KeyA', true);
+        }
+        else if(Phaser.Input.Keyboard.JustDown(this.keyD)){
+            console.log('D key pressed ');
+            this.player.anims.play('glide')
+            this.player.setVelocityX(100);
+        }
+        else {
+            this.player.anims.play('run')
         }
 
         this.player.setVelocityX(300);
