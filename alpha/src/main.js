@@ -1,6 +1,6 @@
 var config = {
-    width: 1600,
-    height: 900,
+    width: 896,
+    height: 448,
     parent: "game-container",
     physics: {
           default: 'arcade',
@@ -11,7 +11,7 @@ var config = {
           }
       },
       pixelArt: true,      
-      scene: [Scene1]
+      scene: [Scene1,GameOver]
     }
   
   var game = new Phaser.Game(config);
