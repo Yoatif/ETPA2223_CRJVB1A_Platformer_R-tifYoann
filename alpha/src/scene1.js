@@ -5,6 +5,11 @@ class Scene1 extends Phaser.Scene{
 
     init(){
         this.keyZ;
+        this.keyD;
+        this.keyK;
+        this.keyO;
+
+        this.score = 0;
         
         
             
@@ -25,6 +30,12 @@ class Scene1 extends Phaser.Scene{
         this.load.image("projBow","./assets/proj_bow.png");
         this.load.image("mob", "./assets/mob.png");
         this.load.image("newPlatform", "./assets/newPlatform.png");
+        this.load.image("uiScore", "./assets/ui_score.png");
+
+        //import collectible 
+        this.load.image("noir", "./assets/collectible/noir.png");
+        this.load.image("blanche", "./assets/collectible/blanche.png");
+        this.load.image("ronde", "./assets/collectible/ronde.png");
 
         //import perso
         this.load.spritesheet("player", "./assets/spritesheet_perso.png",  { frameWidth: 128, frameHeight: 128 });
@@ -34,10 +45,12 @@ class Scene1 extends Phaser.Scene{
 
     create(){
         //this.canJump = false;
-        console.log("first map")
+        console.log("first map");
+
 
         this.proj_Bow = this.physics.add.group();
         this.mob= this.physics.add.group();
+        this.musicNote = ['noir','blanche','ronde'];
 
         const carteDuNiveau = this.add.tilemap("scene1");
 
@@ -56,8 +69,14 @@ class Scene1 extends Phaser.Scene{
             "sol",
             tileset
         );
-
+        this.mob = this.physics.add.group();
+        this.monsterLayer = carteDuNiveau.getObjectLayer('mob');
+        this.monsterLayer.objects.forEach(monsterLayer => {
+            const creatingMob = this.mob.create(monsterLayer.x, monsterLayer.y, "mob")    
+        });
         
+        
+
         this.player = this.physics.add.sprite(40, 580, 'player');
         //this.player.setCollideWorldBounds(true);
         this.player.body.gravity.y = 350;
@@ -76,23 +95,13 @@ class Scene1 extends Phaser.Scene{
             frameRate: 60,
         });
         
-        this.mob = this.physics.add.group();
-        this.monsterLayer = carteDuNiveau.getObjectLayer('mob');
-        this.monsterLayer.objects.forEach(monsterLayer => {
-            const creatingMob = this.mob.create(monsterLayer.x, monsterLayer.y, "mob")    
-        });
+        
         
         //test zone détection utilisation touche pour mécanique de "construction"
         this.detectionZone = this.add.zone(7872, 704, 704, 200);
 
         // Rendre la zone de détection invisible
         this.detectionZone.visible = true;
-      
-        
-       
-
-
-
 
         //importation des entrées clavier
 
@@ -105,18 +114,9 @@ class Scene1 extends Phaser.Scene{
         this.keyK = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.K);
 
         
-
-        //animation joueur
-
-                    
-
-        
         //set collision between player and encironement
         sol.setCollisionByProperty({collider: true});
         
-        
-
-
         // caméra 
         this.cameras.main.startFollow(this.player);
         //this.cameras.main.setBounds(9600, 2560);
@@ -129,7 +129,8 @@ class Scene1 extends Phaser.Scene{
         this.physics.add.collider(this.mob, sol);
         this.physics.add.collider(this.player, this.mob, this.death, null, this);
 
-
+        //creating score counter
+        this.scoreImg = this.add.image(10,10,'uiScore').setScale(0.01);
 
         
 
@@ -174,25 +175,35 @@ class Scene1 extends Phaser.Scene{
             this.player.anims.play('run');
             this.player.body.setSize(64,128);
         }
+
+        // Vérifiez si le joueur touche quelque chose à droite
+        this.isBlockedRight = this.player.body.blocked.right;
+
+        // Faites quelque chose si le joueur est bloqué à droite
+        if (this.isBlockedRight) {
+            console.log("Le joueur est bloqué à droite !");
+            this.death()
+            // Ajoutez ici le code pour gérer le blocage du joueur à droite
+        }
     }
 
     kill_mob_bow(mob, projBow) {
         mob.disableBody(true, true)
         projBow.disableBody(true, true)
-        
-        
     }
 
     clean_proj(proj) {
         proj.disableBody(true, true);
         this.trigger_shoot = false;
     }
+
     shoot(){
         this.proj_Bow.create(this.player.x, this.player.y, "projBow").body.setVelocityX(1500);
     }
 
-
     death(){
         this.scene.start("GameOver");
     }
+
+    
 }
