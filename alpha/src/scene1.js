@@ -10,6 +10,7 @@ class Scene1 extends Phaser.Scene{
         this.keyO;
 
         this.score = 0;
+        this.scoreText;
         
         
             
@@ -51,6 +52,7 @@ class Scene1 extends Phaser.Scene{
         this.proj_Bow = this.physics.add.group();
         this.mob= this.physics.add.group();
         this.musicNote = ['noir','blanche','ronde'];
+        this.scale = 0.2;
 
         const carteDuNiveau = this.add.tilemap("scene1");
 
@@ -60,21 +62,36 @@ class Scene1 extends Phaser.Scene{
         "jeudetuile"
         );
 
-
         const background = carteDuNiveau.createLayer(
             "background",
             tileset
         );
+
         const sol = carteDuNiveau.createLayer(
             "sol",
             tileset
         );
+
         this.mob = this.physics.add.group();
         this.monsterLayer = carteDuNiveau.getObjectLayer('mob');
         this.monsterLayer.objects.forEach(monsterLayer => {
             const creatingMob = this.mob.create(monsterLayer.x, monsterLayer.y, "mob")    
         });
+
+        const collectible = carteDuNiveau.getObjectLayer('collectibles');
+        this.spawnCollectible = collectible.objects;
+
+        const noir = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+        const blanche = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+        const ronde = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+
+        this.noirSprite = this.add.image(noir.x+16, noir.y, 'noir').setScale(this.scale);
+        this.blancheSprite = this.add.image(blanche.x+16, blanche.y, 'blanche').setScale(this.scale);
+        this.rondeSprite = this.add.image(ronde.x, ronde.y, 'ronde').setScale(this.scale);
         
+        this.noirSprite.score = 1;
+        this.blancheSprite.score = 2;
+        this.rondeSprite.score = 4;
         
 
         this.player = this.physics.add.sprite(40, 580, 'player');
@@ -127,10 +144,20 @@ class Scene1 extends Phaser.Scene{
 
         this.physics.add.collider(this.mob, this.proj_Bow, this.kill_mob_bow, null, this);
         this.physics.add.collider(this.mob, sol);
-        this.physics.add.collider(this.player, this.mob, this.death, null, this);
+        //this.physics.add.collider(this.player, this.mob, this.death, null, this);
+
+        //creating overlap
+        this.physics.add.overlap(this.player, [this.noirSprite, this.blancheSprite, this.rondeSprite], this.addScore, null, this);
+  
 
         //creating score counter
-        this.scoreImg = this.add.image(10,10,'uiScore').setScale(0.01);
+        this.scoreImg = this.add.image(32,64,'uiScore').setScale(0.1);
+        this.scoreImg.setScrollFactor(0);
+
+
+        //creating score 
+        this.scoreText = this.add.text(this.scoreImg.x+32, this.scoreImg.y, this.score, { fontSize: '32px', fill: '#000' });
+        this.scoreText.setScrollFactor(0);
 
         
 
@@ -139,6 +166,10 @@ class Scene1 extends Phaser.Scene{
 
     update(){
         //console.log(Phaser.Input.Keyboard.JustDown(this.keyZ));
+        /*this.scoreText.x = this.cameras.main.scrollX + 16;
+        this.scoreText.y = this.cameras.main.scrollY + 16;
+        this.scoreImg.x = this.cameras.main.scrollX -16;
+        this.scoreImg.y = this.cameras.main.scrollY + 16;*/
         
 
         this.player.setVelocityX(300);
@@ -177,14 +208,14 @@ class Scene1 extends Phaser.Scene{
         }
 
         // Vérifiez si le joueur touche quelque chose à droite
-        this.isBlockedRight = this.player.body.blocked.right;
+        /*this.isBlockedRight = this.player.body.blocked.right;
 
         // Faites quelque chose si le joueur est bloqué à droite
         if (this.isBlockedRight) {
             console.log("Le joueur est bloqué à droite !");
             this.death()
             // Ajoutez ici le code pour gérer le blocage du joueur à droite
-        }
+        }*/
     }
 
     kill_mob_bow(mob, projBow) {
@@ -204,6 +235,19 @@ class Scene1 extends Phaser.Scene{
     death(){
         this.scene.start("GameOver");
     }
+
+    
+    addScore(player, spawnCollectible) {
+        // Ajout du score
+        this.score += spawnCollectible.score;
+    
+        // Mise à jour du texte de score
+        this.scoreText.setText(this.score);
+    
+        // Suppression de l'objet
+        spawnCollectible.disableBody(true,true);
+      };
+
 
     
 }
