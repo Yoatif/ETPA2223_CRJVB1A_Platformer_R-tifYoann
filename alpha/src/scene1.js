@@ -29,9 +29,9 @@ class Scene1 extends Phaser.Scene{
         //import assets
         this.load.image("collectible","./assets/collectible.png");
         this.load.image("projBow","./assets/proj_bow.png");
-        this.load.image("mob", "./assets/mob.png");
         this.load.image("newPlatform", "./assets/newPlatform.png");
         this.load.image("uiScore", "./assets/ui_score.png");
+        this.load.image("invisible", "./assets/invesibleSprite.png");
 
         //import collectible 
         this.load.image("noir", "./assets/collectible/noir.png");
@@ -40,6 +40,7 @@ class Scene1 extends Phaser.Scene{
 
         //import perso
         this.load.spritesheet("player", "./assets/spritesheet_perso.png",  { frameWidth: 128, frameHeight: 128 });
+        this.load.spritesheet("mob", "./assets/mob.png",{ frameWidth: 64, frameHeight: 160 });
 
 
     }
@@ -53,6 +54,7 @@ class Scene1 extends Phaser.Scene{
         this.mob= this.physics.add.group();
         this.musicNote = ['noir','blanche','ronde'];
         this.scale = 0.2;
+
 
         const carteDuNiveau = this.add.tilemap("scene1");
 
@@ -75,24 +77,69 @@ class Scene1 extends Phaser.Scene{
         this.mob = this.physics.add.group();
         this.monsterLayer = carteDuNiveau.getObjectLayer('mob');
         this.monsterLayer.objects.forEach(monsterLayer => {
-            const creatingMob = this.mob.create(monsterLayer.x, monsterLayer.y, "mob")    
+            const creatingMob = this.physics.add.sprite(monsterLayer.x, monsterLayer.y, "mob","mob");
+             
         });
 
-        const collectible = carteDuNiveau.getObjectLayer('collectibles');
-        this.spawnCollectible = collectible.objects;
+        this.collectibles = this.add.group();
+        this.collectible = carteDuNiveau.getObjectLayer('collectibles');
+        this.collectible.objects.forEach(collectible => {
+            let random = Math.floor(Math.random() * (2 - 0 + 1) + 0);
+            console.log(random) 
+            if (random == 0){
+                console.log("noir") 
+                this.collectibleSprite = this.physics.add.sprite(collectible.x+16, collectible.y, 'noir').setScale(this.scale);
+                this.collectibleSprite.score = 1;
+                this.collectibleSprite.body.setImmovable(false);
+                this.collectibleSprite.body.allowGravity = false;
+            }
+            else if (random == 1){
+                this.collectibleSprite = this.physics.add.sprite(collectible.x+16, collectible.y, 'blanche').setScale(this.scale);
+                this.collectibleSprite.score = 2;
+                this.collectibleSprite.body.setImmovable(false);
+                this.collectibleSprite.body.allowGravity = false;
+            }
+            else {
+                this.collectibleSprite = this.physics.add.sprite(collectible.x+16, collectible.y, 'ronde').setScale(0.3);
+                this.collectibleSprite.score = 4;
+                this.collectibleSprite.body.setImmovable(false);
+                this.collectibleSprite.body.allowGravity = false;
 
-        const noir = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
-        const blanche = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
-        const ronde = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+            }
 
-        this.noirSprite = this.add.image(noir.x+16, noir.y, 'noir').setScale(this.scale);
-        this.blancheSprite = this.add.image(blanche.x+16, blanche.y, 'blanche').setScale(this.scale);
-        this.rondeSprite = this.add.image(ronde.x, ronde.y, 'ronde').setScale(this.scale);
+            this.collectibles.add(this.collectibleSprite)
+            
+        });
+        
+        /*this.collectible = carteDuNiveau.getObjectLayer('collectibles');
+        this.spawnCollectible = this.collectible.objects;
+
+        this.noir = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+        this.blanche = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+        this.ronde = Phaser.Utils.Array.RemoveRandomElement(this.spawnCollectible);
+
+        this.noirSprite = this.physics.add.sprite(this.noir.x+16, this.noir.y, 'noir').setScale(this.scale);
+        this.blancheSprite = this.physics.add.sprite(this.blanche.x+16, this.blanche.y, 'blanche').setScale(this.scale);
+        this.rondeSprite = this.physics.add.sprite(this.ronde.x, this.ronde.y, 'ronde').setScale(this.scale);
         
         this.noirSprite.score = 1;
         this.blancheSprite.score = 2;
         this.rondeSprite.score = 4;
         
+        this.noirSprite.body.setImmovable(false);
+        this.blancheSprite.body.setImmovable(false);
+        this.rondeSprite.body.setImmovable(false);
+
+        this.noirSprite.body.allowGravity = false;
+        this.blancheSprite.body.allowGravity = false;
+        this.rondeSprite.body.allowGravity = false;*/
+
+        this.falling = this.add.group();
+        this.fallingLayer = carteDuNiveau.getObjectLayer('fallingLayer');
+        this.fallingLayer.objects.forEach(fallLayer => {
+            const fallDead = this.falling.create(fallLayer.x,fallLayer.y,"invisible")
+        });
+
 
         this.player = this.physics.add.sprite(40, 580, 'player');
         //this.player.setCollideWorldBounds(true);
@@ -118,7 +165,7 @@ class Scene1 extends Phaser.Scene{
         this.detectionZone = this.add.zone(7872, 704, 704, 200);
 
         // Rendre la zone de détection invisible
-        this.detectionZone.visible = true;
+        this.detectionZone.visible = false;
 
         //importation des entrées clavier
 
@@ -147,10 +194,10 @@ class Scene1 extends Phaser.Scene{
         //this.physics.add.collider(this.player, this.mob, this.death, null, this);
 
         //creating overlap
-        this.physics.add.overlap(this.player, [this.noirSprite, this.blancheSprite, this.rondeSprite], this.addScore, null, this);
-  
-
-        //creating score counter
+        //this.physics.add.overlap(this.player, [this.noirSprite, this.blancheSprite, this.rondeSprite], this.addScore, null, this);
+        this.physics.add.overlap(this.player, this.collectibles, this.addScore, null, this);
+        this.physics.add.overlap(this.player, this.falling, this.death, null, this);
+       
         this.scoreImg = this.add.image(32,64,'uiScore').setScale(0.1);
         this.scoreImg.setScrollFactor(0);
 
@@ -237,7 +284,22 @@ class Scene1 extends Phaser.Scene{
     }
 
     
-    addScore(player, spawnCollectible) {
+    addScore(player, collectible) {
+        console.log("j'ajoute le score");
+        console.log(this)
+        // Ajout du score
+        this.score += collectible.score;
+    
+        // Mise à jour du texte de score
+        this.scoreText.setText(this.score);
+    
+        // Suppression de l'objet
+        collectible.disableBody(true,true);
+      };
+
+      addScore(player, spawnCollectible) {
+        console.log("j'ajoute le score");
+        console.log(this)
         // Ajout du score
         this.score += spawnCollectible.score;
     
@@ -247,6 +309,7 @@ class Scene1 extends Phaser.Scene{
         // Suppression de l'objet
         spawnCollectible.disableBody(true,true);
       };
+
 
 
     
