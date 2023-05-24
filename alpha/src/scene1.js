@@ -233,13 +233,13 @@ class Scene1 extends Phaser.Scene{
 
         this.mob.getChildren().forEach(soloMob => {
             if(soloMob.body.checkCollision.left){
-                console.log("efzoh");
+                //console.log("efzoh");
                 soloMob.body.setVelocityX(300);
-                soloMob.setFlipX(true)
+                soloMob.setFlipX(true)  
             }
 
             if(soloMob.body.checkCollision.right){
-                console.log("change");
+                //console.log("change");
                 soloMob.body.setVelocityX(-300);
                 soloMob.setFlipX(true)
             }
