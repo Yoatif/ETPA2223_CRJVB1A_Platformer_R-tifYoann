@@ -40,14 +40,14 @@ class Scene1 extends Phaser.Scene{
 
         //import perso
         this.load.spritesheet("player", "./assets/spritesheet_perso.png",  { frameWidth: 128, frameHeight: 128 });
-        this.load.spritesheet("mob", "./assets/mob.png",{ frameWidth: 64, frameHeight: 160 });
+        this.load.spritesheet("mob", "./assets/mob.png",{ frameWidth: 680, frameHeight: 364 });
 
 
     }
 
     create(){
         //this.canJump = false;
-        console.log("first map");
+        //console.log("first map");
 
 
         this.proj_Bow = this.physics.add.group();
@@ -69,25 +69,34 @@ class Scene1 extends Phaser.Scene{
             tileset
         );
 
+        const background2 = carteDuNiveau.createLayer(
+            "background2",
+            tileset
+        );
+
         const sol = carteDuNiveau.createLayer(
             "sol",
             tileset
         );
 
         this.mob = this.physics.add.group();
+        
         this.monsterLayer = carteDuNiveau.getObjectLayer('mob');
         this.monsterLayer.objects.forEach(monsterLayer => {
-            const creatingMob = this.physics.add.sprite(monsterLayer.x, monsterLayer.y, "mob","mob");
+            const creatingMob = this.physics.add.sprite(monsterLayer.x, monsterLayer.y, "mob").setScale(0.3);
+            this.mob.add(creatingMob)
              
         });
+        this.mob.setVelocityX(-300);
+        
 
         this.collectibles = this.add.group();
         this.collectible = carteDuNiveau.getObjectLayer('collectibles');
         this.collectible.objects.forEach(collectible => {
             let random = Math.floor(Math.random() * (2 - 0 + 1) + 0);
-            console.log(random) 
+            //console.log(random) 
             if (random == 0){
-                console.log("noir") 
+                //console.log("noir") 
                 this.collectibleSprite = this.physics.add.sprite(collectible.x+16, collectible.y, 'noir').setScale(this.scale);
                 this.collectibleSprite.score = 1;
                 this.collectibleSprite.body.setImmovable(false);
@@ -180,6 +189,7 @@ class Scene1 extends Phaser.Scene{
         
         //set collision between player and encironement
         sol.setCollisionByProperty({collider: true});
+        background2.setCollisionByProperty({collider: true});
         
         // caméra 
         this.cameras.main.startFollow(this.player);
@@ -191,6 +201,7 @@ class Scene1 extends Phaser.Scene{
 
         this.physics.add.collider(this.mob, this.proj_Bow, this.kill_mob_bow, null, this);
         this.physics.add.collider(this.mob, sol);
+        this.physics.add.collider(this.mob, background2);
         //this.physics.add.collider(this.player, this.mob, this.death, null, this);
 
         //creating overlap
@@ -198,7 +209,7 @@ class Scene1 extends Phaser.Scene{
         this.physics.add.overlap(this.player, this.collectibles, this.addScore, null, this);
         this.physics.add.overlap(this.player, this.falling, this.death, null, this);
        
-        this.scoreImg = this.add.image(32,64,'uiScore').setScale(0.1);
+        this.scoreImg = this.add.image(32,64,'uiScore').setScale(0.2);
         this.scoreImg.setScrollFactor(0);
 
 
@@ -218,22 +229,44 @@ class Scene1 extends Phaser.Scene{
         this.scoreImg.x = this.cameras.main.scrollX -16;
         this.scoreImg.y = this.cameras.main.scrollY + 16;*/
         
+        
 
+        this.mob.getChildren().forEach(soloMob => {
+            if(soloMob.body.checkCollision.left){
+                console.log("efzoh");
+                soloMob.body.setVelocityX(300);
+                soloMob.setFlipX(true)
+            }
+
+            if(soloMob.body.checkCollision.right){
+                console.log("change");
+                soloMob.body.setVelocityX(-300);
+                soloMob.setFlipX(true)
+            }
+            
+        });
+/*
+        if(this.mob.body.isBlocked.left){
+            
+            
+
+            
+        }*/
         this.player.setVelocityX(300);
 
         if (Phaser.Geom.Intersects.RectangleToRectangle(this.player.getBounds(), this.detectionZone.getBounds())) {
-            console.log('Le joueur est dans la zone de détection !');
+            //console.log('Le joueur est dans la zone de détection !');
             // Faire quelque chose lorsque le joueur est détecté
           }
 
         if(Phaser.Input.Keyboard.JustDown(this.keyZ)) {
-            console.log('Z key pressed');
+            //console.log('Z key pressed');
             this.player.setVelocityY(-350);
             this.player.anims.play('run');
             this.player.body.setSize(64,128);
         }
         if(this.keyD.isDown){
-            console.log('D key pressed ');
+            //console.log('D key pressed ');
             this.player.anims.play('slide');
             this.player.body.setSize(128,64);
             this.player.body.setOffset(0, 64);
@@ -241,7 +274,7 @@ class Scene1 extends Phaser.Scene{
         }
             
         else if(Phaser.Input.Keyboard.JustDown(this.keyO)){
-            console.log("O key pressed");
+            //console.log("O key pressed");
             this.shoot(this.player);
             //this.test = this.proj_Bow.create(this.player.x, this.player.y, "projBow").body.setVelocityX(500);
             //this.time.delayedCall(500, (test)=>{test.disableBody(true,true)}, [this.test], this);
@@ -285,8 +318,8 @@ class Scene1 extends Phaser.Scene{
 
     
     addScore(player, collectible) {
-        console.log("j'ajoute le score");
-        console.log(this)
+        //console.log("j'ajoute le score");
+        //console.log(this)
         // Ajout du score
         this.score += collectible.score;
     
@@ -298,8 +331,8 @@ class Scene1 extends Phaser.Scene{
       };
 
       addScore(player, spawnCollectible) {
-        console.log("j'ajoute le score");
-        console.log(this)
+        //console.log("j'ajoute le score");
+        //console.log(this)
         // Ajout du score
         this.score += spawnCollectible.score;
     
