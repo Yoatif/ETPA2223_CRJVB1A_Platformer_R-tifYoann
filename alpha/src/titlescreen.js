@@ -14,12 +14,7 @@ class Titlescreen extends Phaser.Scene {
             this.load.image("background", "assets/menu/croquis_menu_start.png");
 
             //import bouton
-            this.load.image("playButton", "assets/menu/first_start_button.png");
-            this.load.image("playButton2", "assets/menu/second_start_button.png");
-            this.load.image("exitbutton", "assets/menu/first_exit_button.png");
-            this.load.image("exitbutton2", "assets/menu/second_exit_button.png");
-            this.load.image("infobutton", "assets/menu/first_info_button.png");
-            this.load.image("infobutton2", "assets/menu/second_info_button.png");
+            *
 
             // import audio
 
