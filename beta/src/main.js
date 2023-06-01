@@ -5,12 +5,11 @@ var config = {
     physics: {
           default: 'arcade',
           arcade: {
-              gravity: { y: 300 },
               debug: true
           }
       },
       pixelArt: true,      
-      scene: [Titlescreen,Info,Credit,LvlSelection,Scene1]
+      scene: [/*Titlescreen,Info,Credit,LvlSelection,*/Scene1]
     }
   
   var game = new Phaser.Game(config);

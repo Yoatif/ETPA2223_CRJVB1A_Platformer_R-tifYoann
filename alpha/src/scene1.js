@@ -152,7 +152,7 @@ class Scene1 extends Phaser.Scene{
 
         this.player = this.physics.add.sprite(40, 580, 'player');
         //this.player.setCollideWorldBounds(true);
-        this.player.body.gravity.y = 350;
+        this.player.body.gravity.y = 400;
         
         this.physics.add.collider(this.player, sol, );
         

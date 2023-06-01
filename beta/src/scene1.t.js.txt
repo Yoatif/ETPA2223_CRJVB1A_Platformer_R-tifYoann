@@ -1,0 +1,142 @@
+let gameOptions = {
+    platformStartSpeed: 350,
+    spawnRange: [100, 350],
+    platformSizeRange: [50, 250],
+    playerGravity: 900,
+    jumpForce: 400,
+    playerStartPosition: 200,
+    jumps: 2
+}
+
+class Scene1 extends Phaser.Scene{
+    constructor(){
+        super("Scene1");
+    }
+
+    init(){
+        
+            
+    }
+    
+    preload(){
+
+        //chargment des diverses plateformes
+        /*this.load.image("pattern_1","../LD/saut.png");
+        this.load.image("pattern_2","../LD/double_saut_1.png");
+        this.load.image("pattern_3","../LD/double_saut_2.png");
+        this.load.image("parttern_4","../LD/double_saut_3.png");
+
+        this.load.image("pattern_5","../LD/double_glissade_1.png");
+        this.load.image("pattern_6","../LD/double_glissade_2.png");
+        this.load.image("pattern_7","../LD/double_glissade_2.png");
+
+        this.load.image("pattern_8","../LD/rouler_1.png");
+        this.load.image("pattern_9","../LD/rouler_2.png");
+        this.load.image("pattern_10","../LD/rouler_3.png");
+        this.load.image("pattern_11","../LD/rouler_4.png");
+        this.load.image("pattern_12","../LD/rouler_5.png");
+        this.load.image("pattern_13","../LD/rouler_6.png");
+
+        this.load.image("pattern_14","../LD/moulin_1.png");
+        this.load.image("pattern_15","../LD/moulin_2.png");
+        this.load.image("pattern_16","../LD/moulin_3.png");
+        this.load.image("pattern_17","../LD/moulin_4.png");
+        this.load.image("pattern_18","../LD/moulin_5.png");
+        this.load.image("pattern_19","../LD/moulin_6.png");
+        this.load.image("pattern_20","../LD/moulin_7.png");
+
+        this.load.image("pattern_21","../LD/mix_1.png");
+        this.load.image("pattern_21","../LD/mix_.png");*/
+
+        this.load.image("start", "start.png");
+        this.load.image("final", "../LD/final.png");
+
+        //preload spritesheet player
+        this.load.spritesheet("player", "../assets/spritesheet_kokopelli.png",
+        { frameWidth: 128, frameHeight: 128 });
+
+
+        
+    }
+
+    create(){
+
+         // group with all active platforms.
+         this.platformGroup = this.add.group({
+
+            
+
+            // once a platform is removed, it's added to the pool
+            removeCallback: function(platform){
+                platform.scene.platformPool.add(platform)
+            }
+        });
+
+        // pool
+        this.platformPool = this.add.group({
+
+            // once a platform is removed from the pool, it's added to the active platforms group
+            removeCallback: function(platform){
+                platform.scene.platformGroup.add(platform)
+            }
+        });
+
+        this.platformList = ["pattern_1","pattern_2","pattern_3","pattern_4","pattern_5","pattern_6","pattern_7","pattern_8","pattern_9","pattern_10",
+        "pattern_11","pattern_12","pattern_13","pattern_14","pattern_15","pattern_16","pattern_17","pattern_18","pattern_19","pattern_20",
+        "pattern_21","pattern_22"]
+
+        this.add.image("start");
+
+        this.addPlatform(game.config.width, game.config.width / 2);
+
+        this.player = this.physics.add.sprite(gameOptions.playerStartPosition, game.config.height / 2, "player");
+        this.player.setGravityY(gameOptions.playerGravity);
+
+        this.physics.add.collider(this.player, this.platformGroup);
+        
+    }
+
+    update(){
+        if (this.player.y > game.config.height) {
+            this.scene.start("Scene1");
+        }
+        this.player.x = gameOptions.playerStartPosition;
+
+        let minDistance = game.config.width;
+        this.platformGroup.getChildren().forEach(function (platform) {
+            let platformDistance = game.config.width - platform.x - platform.displayWidth / 2;
+            minDistance = Math.min(minDistance, platformDistance);
+            if (platform.x < -platform.displayWidth / 2) {
+                this.platformGroup.killAndHide(platform);
+                this.platformGroup.remove(platform);
+            }
+        }, this);
+
+        if (minDistance > this.nextPlatformDistance) {
+            var nextPlatformWidth = Phaser.Math.Between(gameOptions.platformSizeRange[0], gameOptions.platformSizeRange[1]);
+            this.addPlatform(nextPlatformWidth, game.config.width + nextPlatformWidth / 2);
+        }
+
+        this.randPattern = Math.floor(Math.random() * (21 - 0 +1) + 0)
+        console.log("random:"+this.randPattern);
+
+    }
+
+    addPlatform(platformWidth, posX) {
+        let platform;
+        if (this.platformPool.getLength()) {
+            platform = this.platformPool.getFirst();
+            platform.x = posX;
+            platform.active = true;
+            platform.visible = true;
+            this.platformPool.remove(platform);
+        } else {
+            platform = this.physics.add.sprite(posX, game.config.height * 0.8, this.randPattern);
+            platform.setImmovable(true);
+            platform.setVelocityX(gameOptions.platformStartSpeed * -1);
+            this.platformGroup.add(platform);
+        }
+        platform.displayWidth = platformWidth;
+        this.nextPlatformDistance = Phaser.Math.Between(gameOptions.spawnRange[0], gameOptions.spawnRange[1]);
+    }
+}
