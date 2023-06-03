@@ -142,6 +142,7 @@ class Scene1 extends Phaser.Scene{
         
         this.physics.add.collider(this.player, sol);
         this.physics.add.collider(this.player, piques, this.death, null, this);
+        this.physics.add.collider(this.player, totem, this.ending, null, this);
         
 
         this.anims.create({
@@ -170,6 +171,7 @@ class Scene1 extends Phaser.Scene{
         //set collision between player and encironement
         sol.setCollisionByProperty({collider: true});
         piques.setCollisionByProperty({spiked: true});
+        totem.setCollisionByProperty({ending: true});
         //background2.setCollisionByProperty({collider: true});
         
         // caméra 
@@ -182,6 +184,7 @@ class Scene1 extends Phaser.Scene{
 
         this.physics.add.collider(this.mob, this.proj_Bow, this.kill_mob_bow, null, this);
         this.physics.add.collider(this.mob, sol);
+        this.physics.add.collider(this.mob, piques);
         //this.physics.add.collider(this.mob, background2);
         this.physics.add.collider(this.player, this.mob, this.death, null, this);
 
@@ -264,19 +267,19 @@ class Scene1 extends Phaser.Scene{
         }
 
         // Vérifiez si le joueur touche quelque chose à droite
-        /*this.isBlockedRight = this.player.body.blocked.right;
+        this.isBlockedRight = this.player.body.blocked.right;
 
-        // Faites quelque chose si le joueur est bloqué à droite
+        // ici le code pour gérer le blocage du joueur à droite
         if (this.isBlockedRight) {
             console.log("Le joueur est bloqué à droite !");
             this.death()
-            // Ajoutez ici le code pour gérer le blocage du joueur à droite
-        }*/
+        }
     }
 
     kill_mob_bow(mob, projBow) {
         mob.disableBody(true, true)
         projBow.disableBody(true, true)
+        this.score += 10;
     }
 
     clean_proj(proj) {
@@ -306,7 +309,7 @@ class Scene1 extends Phaser.Scene{
         collectible.disableBody(true,true);
       };
 
-      addScore(player, spawnCollectible) {
+      /*addScore(player, spawnCollectible) {
         //console.log("j'ajoute le score");
         //console.log(this)
         // Ajout du score
@@ -318,5 +321,9 @@ class Scene1 extends Phaser.Scene{
         // Suppression de l'objet
         spawnCollectible.disableBody(true,true);
       };
+
+      ending(){
+        this.scene.start("");
+      };*/
 }
 
