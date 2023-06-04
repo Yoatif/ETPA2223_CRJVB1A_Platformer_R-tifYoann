@@ -9,7 +9,7 @@ var config = {
           }
       },
       pixelArt: true,      
-      scene: [/*Titlescreen,Info,Credit,LvlSelection,*/Scene1]
+      scene: [Titlescreen,Info,Credit,LvlSelection,Scene1]
     }
   
   var game = new Phaser.Game(config);
