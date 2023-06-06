@@ -22,8 +22,8 @@ class Titlescreen extends Phaser.Scene {
 
             // import audio
 
-            //this.load.audio("theme", ["sound/theme.ogg", "sound/theme.mp3"]);
-            //this.load.audio("button_sound", ["sound/click_button.ogg", "sound/click_button.mp3"]);
+            this.load.audio("theme",  "sound/la suerte.mp3");
+            this.load.audio("button_sound", "sound/didjeridoo.mp3");
 
         }
 
@@ -31,11 +31,11 @@ class Titlescreen extends Phaser.Scene {
             
 
             //adding theme to Titlescreen
-            //this.theme = this.sound.add("theme", {volume: 0.2, loop: true});
-            //this.theme.play();
+            this.theme = this.sound.add("theme", {volume: 0.2, loop: true});
+            this.theme.play();
 
             //button_sound
-            //this.clicksound = this.sound.add("button_sound", {volume: 0.8, loop: false});
+            this.clicksound = this.sound.add("button_sound", {volume: 0.8, loop: false});
             
 
 

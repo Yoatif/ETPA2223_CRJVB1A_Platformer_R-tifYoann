@@ -44,6 +44,9 @@ class Scene1 extends Phaser.Scene{
         this.load.spritesheet("mob", "./assets/mob.png",
             { frameWidth: 680, frameHeight: 364 });
 
+        //import audio
+        this.load.audio("songScene1",  "sound/Comme une danse.mp3");
+
 
     }
 
