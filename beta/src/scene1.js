@@ -45,7 +45,7 @@ class Scene1 extends Phaser.Scene{
             { frameWidth: 680, frameHeight: 364 });
 
         //import audio
-        this.load.audio("songScene1",  "sound/Comme une danse.mp3");
+        this.load.audio("songScene1",  "sound/Commeunedanse.mp3");
 
 
     }
